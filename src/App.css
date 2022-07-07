@@ -1,0 +1,11 @@
+.app {
+    height: 100vh;
+    font-family: 'Roboto Mono', monospace;
+}
+.sections {
+    width: 100%;
+    height: 800px;
+    position: relative;
+    top: 300px;
+    scroll-behavior: smooth;
+}

@@ -1,0 +1,15 @@
+.header {
+    background-color: white;
+    width: 100%;
+    height: 300px;
+    position: fixed;
+    top: 0;
+}
+.tigerlogo {
+    max-width: 70%;
+    max-height: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}

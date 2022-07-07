@@ -1,0 +1,23 @@
+.nav {
+    background-color: white;
+    height: 100px;
+}
+.navbar {
+    margin: 50px;
+    text-align: center;
+}
+.navbar ul {
+    display: flex;
+    justify-content: space-between; 
+    width: auto;
+    list-style: none;
+}
+.navbar a {
+    text-decoration: none;
+    font-size: 2vw;
+    color: #0348a3;
+}
+a:hover {
+    text-decoration: underline;
+    transition: 0.5;
+}

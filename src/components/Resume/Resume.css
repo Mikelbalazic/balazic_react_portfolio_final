@@ -1,0 +1,22 @@
+.resume {
+    background-color: #0348a3;
+    height: 500px;
+}
+.resume-icon {
+    max-width: 10%;
+    max-height: 10%;
+    margin: 40px 0px 0px 35px;
+}
+.resumeimg {
+    max-width: 70%;
+    max-height: 70%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    float: right;
+    margin-right: 150px;
+}
+h1 {
+    color: white;
+    margin: 15px 0px 0px 15px;
+}
