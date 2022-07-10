@@ -1,7 +1,10 @@
 .about {
     background-color: #0348a3;
     height: 500px;
-    overflow: scroll;
+    overflow: hidden;
+}
+.about:hover {
+    overflow-y: scroll;
 }
 .about-text {
     display: inline-block;

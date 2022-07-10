@@ -2,18 +2,14 @@
     background-color: white;
     height: 500px;
 }
-.contact-list {
-    margin: 50px;
+.contact-icons {
     text-align: center;
 }
-.contact-list ul {
-    display: flex;
-    justify-content: space-between; 
-    width: auto;
-    list-style: none;
+.github-logo {
+    max-width: 100px;
+    max-height: 100px;
 }
-.contact-list li {
-    text-decoration: none;
-    font-size: 1.2vw;
-    color: #0348a3;
+.insta-logo {
+    max-width: 100px;
+    max-height: 100px;
 }

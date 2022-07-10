@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer";
 import "./App.css";
 
 function App() {
+  
   return (
     <div className="app">
       <Header/>
@@ -22,5 +23,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
