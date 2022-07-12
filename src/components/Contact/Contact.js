@@ -1,46 +1,98 @@
-import React from 'react';
+import React, { useState } from "react";
 import "./Contact.css";
-import emailjs from "emailjs-com";
-import { useForm } from 'react-hook-form';
+import { validateEmail } from "../../utils/helpers";
 
-export default function Contact() {
+function Contact() {
+    const [formState, setFormState] = useState({
+        name: "",
+        email: "",
+        message: "",
+    });
 
-    const { handleSubmit } = useForm();
+    const [errorMessage, setErrorMessage] = useState("");
 
-    function emailMe(e) {
-        e.preventDefault();
+    const { name, email, message } = formState;
 
-        emailjs.sendForm('service_23xjuf7', 'template_egh1mle', e.target, '7Pp3J38zi_F5L3HZz')
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            });
+    function handleChange(e) {
+        if (e.target.name === "email") {
+            const isValid = validateEmail(e.target.value);
+            if (!isValid) {
+                setErrorMessage("Your email is invalid.");
+            } else {
+                if (!e.target.value.length) {
+                    setErrorMessage(`${e.target.name} is required.`);
+                } else {
+                    setErrorMessage("");
+                }
+            }
+        }
+
+        if (!errorMessage) {
+            setFormState({ ...formState, [e.target.name]: e.target.value });
+        }
     }
-        
+
+    function handleBlank(e) {
+        if (e.target.name === "Name" || e.target.name === "Message") {
+            if (!e.target.value.length) {
+                setErrorMessage(`${e.target.name} is required.`);
+            } else {
+                setErrorMessage("");
+            }
+        }
+
+        if (!errorMessage) {
+            setFormState({ ...formState, [e.target.name]: e.target.value });
+        }
+    }
+
     return (
         <div className="contact" id="contact">
-
-            <img src="img/contact-icon.png" className="icon" alt="phone-icon-for-contact-section" />
-
-            <div className="contact-icons">
-                <a href="https://github.com/Mikelbalazic" target="react/jsx-no-target-blank">
-                    <img src="img/github-logo.png" className="github-logo" alt="Github_Logo" />
-                </a>
-                <a href="https://www.instagram.com/mikelreedbalazic/?hl=en" target="react/jsx-no-target-blank">
-                    <img src="img/insta-logo.png" className="insta-logo" alt="Instagram_Logo" />
-                </a>
+            <div className="contact-container">
+                <div>
+                    <h2>Contact Me</h2>
+                </div>
+                <form id="contact-form">
+                    <div>
+                        <label htmlFor="Name">Name:</label>
+                        <br></br>
+                        <input
+                            type="text"
+                            defaultValue={name}
+                            onBlur={handleBlank}
+                            name="Name"
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="email">Email address:</label>
+                        <br></br>
+                        <input
+                            type="email"
+                            defaultValue={email}
+                            name="email"
+                            onBlur={handleChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="Message">Message:</label>
+                        <br></br>
+                        <textarea
+                            name="Message"
+                            defaultValue={message}
+                            onBlur={handleBlank}
+                            rows="5"
+                        />
+                    </div>
+                    {errorMessage && (
+                        <div>
+                            <p className="error-text">{errorMessage}</p>
+                        </div>
+                    )}
+                    <button type="submit">Submit</button>
+                </form>
             </div>
-
-            <form onSubmit={emailMe}>
-                <input type="text" className="email-form" placeholder="Name" name="name" />
-                <input type="email" className="email-form" placeholder="Email Address" name="name" />
-                <input type="text" className="email-form" placeholder="Subject" name="name" />
-                <textarea className="email-form" placeholder="Message" name="message"></textarea>
-                <input type="submit" className="email-submit-btn" value="Send Message"></input>
-            </form>
-
-
         </div>
-    )
+    );
 }
+
+export default Contact;
