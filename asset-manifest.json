@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.653607b5.css",
-    "main.js": "/static/js/main.e9224245.js",
-    "index.html": "/index.html",
-    "main.653607b5.css.map": "/static/css/main.653607b5.css.map",
-    "main.e9224245.js.map": "/static/js/main.e9224245.js.map"
+    "main.css": "/balazic_react_portfolio_final/static/css/main.653607b5.css",
+    "main.js": "/balazic_react_portfolio_final/static/js/main.e9224245.js",
+    "index.html": "/balazic_react_portfolio_final/index.html",
+    "main.653607b5.css.map": "/balazic_react_portfolio_final/static/css/main.653607b5.css.map",
+    "main.e9224245.js.map": "/balazic_react_portfolio_final/static/js/main.e9224245.js.map"
   },
   "entrypoints": [
     "static/css/main.653607b5.css",
